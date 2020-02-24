@@ -4,18 +4,19 @@ import { getOneBeer } from '../beer-api.js';
 
 export default class Detail extends Component {
     
-    state = { beer: {} }
+    state = { beer: [] }
 
     async componentDidMount() {
-        console.log(`------------param:`, this.props.match.params.beer);
+
         const data = await getOneBeer(this.props.match.params.beer);
-        this.setState({ beer: data.body[0] })
+        this.setState({ beer: data.body })
     }
     
     render() {
+        const beerNode = this.state.beer.map(beer => <BeerItem beer={beer} key={`single_${beer.name}`} />)
         return (
             <ul>
-                <BeerItem beer={this.state.beer} key={`single_${this.state.beer.name}`} />
+                {beerNode}
             </ul>
         )
     }

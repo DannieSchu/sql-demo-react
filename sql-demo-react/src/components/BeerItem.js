@@ -8,7 +8,7 @@ export default class BeerItem extends Component {
             <li className="beer-container" style={color}>
                 <h2>{beer.name}</h2>
                 <p><em>{beer.brewery}</em></p>
-                <img src={`assets/${beer.image}`} alt={beer.name} />
+                <img src={`/assets/${beer.image}`} alt={beer.name} />
                 <div>
                     <span>{beer.type_id}</span>
                     <span>{`${beer.abv.toFixed(1)}%`}</span>
