@@ -4,16 +4,19 @@ import { getOneBeer } from '../beer-api.js';
 
 export default class Detail extends Component {
     
-    state = { beer: {}}
+    state = { beer: {} }
 
-    componentDidMount() {
-         const data = getOneBeer();
-         this.setState({beer: data.body})
-    }
-
-    render() {
+    async componentDidMount() {
+         const data = await getOneBeer(this.props.match.params.beer);
+         this.setState({ beer: data.body.results[0] })
+        }
+        
+        render() {
+            console.log(`this.props.match.params.beer`, this.props.match.params.beer)
         return (
-            <BeerItem beer={this.state.beer} />
+            <div>
+                <BeerItem beer={this.state.beer} />
+            </div>
         )
     }
 }
