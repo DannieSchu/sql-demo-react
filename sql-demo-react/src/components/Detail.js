@@ -7,16 +7,16 @@ export default class Detail extends Component {
     state = { beer: {} }
 
     async componentDidMount() {
-         const data = await getOneBeer(this.props.match.params.beer);
-         this.setState({ beer: data.body.results[0] })
-        }
-        
-        render() {
-            console.log(`this.props.match.params.beer`, this.props.match.params.beer)
+        console.log(`------------param:`, this.props.match.params.beer);
+        const data = await getOneBeer(this.props.match.params.beer);
+        this.setState({ beer: data.body[0] })
+    }
+    
+    render() {
         return (
-            <div>
-                <BeerItem beer={this.state.beer} />
-            </div>
+            <ul>
+                <BeerItem beer={this.state.beer} key={`single_${this.state.beer.name}`} />
+            </ul>
         )
     }
 }

@@ -9,5 +9,6 @@ export async function getBeers() {
 }
 
 export async function getOneBeer(id) {
+    console.log('___url', singleURL + id)
     return await request.get(`${singleURL}${id}`);
 }
