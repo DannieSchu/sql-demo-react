@@ -4,7 +4,7 @@ export default class BeerItem extends Component {
     
     render() {
         const { beer } = this.props;
-        const color = (beer.alchoholic) ? { borderColor: '#804040' } : { borderColor: '#00ffff' } 
+        const color = (beer.alcoholic) ? { borderColor: '#804040' } : { borderColor: '#00ffff' } 
         return (
             <li className="beer-container" style={color}>
                 <h2>{beer.name}</h2>
