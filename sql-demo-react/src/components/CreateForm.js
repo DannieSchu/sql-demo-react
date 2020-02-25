@@ -25,11 +25,11 @@ export default class CreateForm extends Component {
         e.preventDefault();
         const newBeer = {
             name: this.state.name,
-            typeId: Number(this.state.type_id),
+            typeId: Number(this.state.typeId),
             image: this.state.image,
             brewery: this.state.brewery,
             alcoholic: this.state.alcoholic,
-            ABV: Number(this.state.abv),
+            ABV: Number(this.state.ABV),
             urlImage: true
         }
         await postBeer(newBeer);
