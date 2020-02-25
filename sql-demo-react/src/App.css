@@ -1,6 +1,9 @@
 h1 {
     text-align: center;
+    
 }
+
+
 .list {
     width: 90%;
     margin: 0 auto;
@@ -35,3 +38,39 @@ a {
     justify-content: space-evenly;
     margin: 5px;
 }
+
+.nav {
+    height: 70px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: beige;
+}
+
+form {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+form > label {
+    width: 54%;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+label span {
+    text-align: right;
+    width: 45%;
+}
+label select {
+    width: 160px;
+}
+
+
+form button {
+    width: 100px
+}
+
+

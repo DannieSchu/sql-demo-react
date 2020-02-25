@@ -1,14 +1,19 @@
 import request from 'superagent';
 
-const URL = `https://sheltered-ridge-06778.herokuapp.com/api/beers`;
-
-const singleURL = `https://sheltered-ridge-06778.herokuapp.com/api/beer/`; 
+const URL = `https://sheltered-ridge-06778.herokuapp.com/api`;
 
 export async function getBeers() {
-    return await request.get(URL);
+    return await request.get(`${URL}/beers`);
 }
 
 export async function getOneBeer(id) {
-    console.log('___url', singleURL + id)
-    return await request.get(`${singleURL}${id}`);
+    return await request.get(`${URL}/beer/${id}`);
+}
+
+export async function getTypes() {
+    return await request.get(`${URL}/types`);
+}
+
+export async function postBeer(object) {
+    await request.post(`${URL}/beers`, object);
 }
