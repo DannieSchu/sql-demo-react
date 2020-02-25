@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 export default class BeerItem extends Component {
+    
     render() {
         const { beer } = this.props;
         const color = (beer.alchoholic) ? { borderColor: '#804040' } : { borderColor: '#00ffff' } 
