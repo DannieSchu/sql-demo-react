@@ -10,6 +10,10 @@ export async function getOneBeer(id) {
     return await request.get(`${URL}/beer/${id}`);
 }
 
+export async function deleteOneBeer(id) {
+    return await request.delete(`${URL}/beer/${id}`);
+}
+
 export async function getTypes() {
     return await request.get(`${URL}/types`);
 }

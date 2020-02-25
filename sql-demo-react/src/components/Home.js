@@ -18,7 +18,7 @@ export default class Home extends Component {
 
     render() {
         const beerNodes = this.state.beers.map(beer => 
-            <Link to={`/beers/${beer.id}`}>
+            <Link to={`/beers/${beer.beer_id}`}>
                 <BeerItem beer={beer} key={`list_${beer.name}`}/>
             </Link>
         )
