@@ -13,14 +13,14 @@ export default class App extends Component {
     return (
       <Router>
         <Nav />
+
         <Header />
         <Switch >
-          <Route path="/beers/:beer?" component={Detail} />
+          <Route path="/beers/:beer" component={Detail} />
           <Route path="/create" component={
-        CreateForm} />
+            CreateForm} />
           }
           <Route exact path="/" component={Home} />
-
         </Switch>
       </Router>    
       )
